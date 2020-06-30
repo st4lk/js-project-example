@@ -1,0 +1,33 @@
+{
+  "name": "@example/dep",
+  "version": "1.0.0",
+  "description": "Example dependency for source-maps example",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack --mode production --config webpack.config.js --progress --colors --bail",
+    "build-dev": "webpack --mode development --config webpack.config.js --progress --colors --bail --watch",
+    "lint": "node ./node_modules/eslint/bin/eslint.js .",
+    "test": "echo \"No test specified yet\" && exit 0"
+  },
+  "files": [
+    "dist/",
+    "package.json",
+    "README.md"
+  ],
+  "author": "Alexey Evseev <alexeyevseev@gmail.com>",
+  "license": "ISC",
+  "homepage": "http://lexev.org",
+  "devDependencies": {
+    "@babel/core": "7.7.2",
+    "@babel/plugin-proposal-class-properties": "7.7.0",
+    "@babel/preset-env": "7.7.1",
+    "@babel/preset-react": "7.7.0",
+    "babel-eslint": "10.0.3",
+    "babel-loader": "8.0.6",
+    "eslint": "6.6.0",
+    "eslint-plugin-import": "^2.20.2",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11"
+  },
+  "dependencies": {}
+}

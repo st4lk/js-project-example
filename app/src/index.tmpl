@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html <% if( htmlWebpackPlugin.files.manifest) { %> manifest="<%=  htmlWebpackPlugin.files.manifest %>"<% } %>>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <% if ( htmlWebpackPlugin.files.favicon) { %>
+        <link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.favicon%>">
+    <% } %>
+
+    <script
+      src="https://browser.sentry-cdn.com/5.17.0/bundle.min.js"
+      integrity="sha384-lowBFC6YTkvMIWPORr7+TERnCkZdo5ab00oH5NkFLeQUAmBTLGwJpFjF6djuxJ/5"
+      crossorigin="anonymous"></script>
+    <script src="https://browser.sentry-cdn.com/5.18.0/captureconsole.min.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    if (<%= htmlWebpackPlugin.options.environment %> !== "development") {
+      Sentry.init({
+        "dsn": <%= htmlWebpackPlugin.options.sentryDSN %>,
+        "environment": <%= htmlWebpackPlugin.options.environment %>,
+        "release": <%= htmlWebpackPlugin.options.sentryRelease %>,
+        "integrations": [
+          new Sentry.Integrations.CaptureConsole({"levels": ["warn", "error", "assert"]}),
+        ],
+      });
+    }
+    </script>
+  </head>
+  <body style="margin: 0;">
+    <div id="app"></div>
+  </body>
+</html>
