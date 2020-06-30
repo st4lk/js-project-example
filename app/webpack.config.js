@@ -5,7 +5,8 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
-const dotenv = require('dotenv').config({path: __dirname + '/.env'});
+
+require('dotenv').config({path: __dirname + '/.env'});
 
 const config = {
   mode: "development",
