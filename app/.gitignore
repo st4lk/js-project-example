@@ -52,3 +52,5 @@ dist/
 .install
 *.TODO
 .env
+
+.sentryclirc
