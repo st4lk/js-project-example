@@ -27,7 +27,7 @@ const config = {
       template: "src/index.tmpl",
 
       sentryDSN: JSON.stringify(process.env.SENTRY_DSN),
-      environment: JSON.stringify(process.env.NODE_ENV),
+      environment: JSON.stringify(process.env.NODE_ENV || "development"),
       sentryRelease: JSON.stringify(process.env.SENTRY_RELEASE_NAME),
       isProd: process.env.NODE_ENV === 'production',
     }),

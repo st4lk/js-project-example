@@ -46,14 +46,18 @@ class Home extends Component {
 
     const {classes} = this.props;
 
-    /*** exception 1 - page crash ***/
-    // const myObject = undefined;
-    // console.log(myObject.bucket);
+    if (window.location.href.includes('exception-1')) {
+      /*** exception 1 - page crash ***/
+      const myObject = undefined;
+      console.log(myObject.bucket);
+    }
 
-    /*** exception 2 - unhandled error from promise ***/
-    // this.callApiWithError().then(() => {
-    //   console.log('API success');
-    // })
+    if (window.location.href.includes('exception-2')) {
+      /*** exception 2 - unhandled error from promise ***/
+      this.callApiWithError().then(() => {
+        console.log('API success');
+      });
+    }
 
     const config = {1:'AB', 2: 'CD', 3: 'EG'};
 

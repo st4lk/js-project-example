@@ -1,3 +1,6 @@
+[auth]
+token=123
+
 [defaults]
 org = org-name
 project = project-name

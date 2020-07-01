@@ -4,9 +4,11 @@ import {BrowserRouter} from "react-router-dom";
 import {renderRoutes} from "react-router-config";
 import {mainRoutes} from "./routes";
 
-/*** exception 3 - app crash ***/
-// const myObject = undefined;
-// console.log(myObject.bucket);
+if (window.location.href.includes('exception-3')) {
+  /*** exception 3 - app crash ***/
+  const myObject = undefined;
+  console.log(myObject.bucket);
+}
 
 ReactDOM.render((
   <BrowserRouter>

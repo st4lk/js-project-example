@@ -8,8 +8,8 @@ module.exports = {
     libraryTarget: "umd",
     library: "",
   },
-  devtool: false,
-  // devtool: "source-map",
+  // devtool: false,
+  devtool: "source-map",
 
   optimization: {
     minimize: false,
