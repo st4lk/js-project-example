@@ -61,12 +61,16 @@ class Home extends Component {
 
     const config = {1:'AB', 2: 'CD', 3: 'EG'};
 
-    console.warn('This is test warning', config);
+    if (window.location.href.includes('warn-console')) {
+      console.warn('This is test warning', config);
+    }
 
-    // Sentry.withScope(function(scope) {
-    //   scope.setExtra("config", config);
-    //   console.warn('This is test warning');
-    // });
+    if (window.location.href.includes('warn-with-sentry-scope')) {
+      Sentry.withScope(function(scope) {
+        scope.setExtra("config", config);
+        console.warn('This is test warning');
+      });
+    }
 
     getSearch();
 
