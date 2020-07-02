@@ -14,8 +14,8 @@ install: .install
 sentry-create-release:
 	$(SENTRY_CLI) releases new --finalize $(SENTRY_RELEASE_NAME)
 
-# sentry-set-commits: sentry-create-release
-# 	$(SENTRY_CLI) releases set-commits --auto $(SENTRY_RELEASE_NAME)
+sentry-set-commits: sentry-create-release
+	$(SENTRY_CLI) releases set-commits --auto $(SENTRY_RELEASE_NAME)
 
 sentry-upload-sourcemaps: sentry-create-release
 	$(SENTRY_CLI) releases files $(SENTRY_RELEASE_NAME) upload-sourcemaps $(DIST_PATH) --rewrite -i node_modules/ -i webpack.*
@@ -37,5 +37,5 @@ build: install
 	SENTRY_RELEASE_NAME=$(SENTRY_RELEASE_NAME) npm run build-prod
 
 deploy: build
-# 	make sentry-set-commits
+	make sentry-set-commits
 	make sentry-upload-sourcemaps
