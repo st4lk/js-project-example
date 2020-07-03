@@ -27,6 +27,9 @@ serve: build
 	rm $(DIST_PATH)/assets/*.map
 	cd $(DIST_PATH) && python -m SimpleHTTPServer 8080
 
+serve-staging: build-staging
+	cd $(DIST_PATH) && python -m SimpleHTTPServer 8080
+
 lint: install
 	npm run lint
 
