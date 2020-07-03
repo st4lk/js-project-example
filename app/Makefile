@@ -36,6 +36,13 @@ build-dev: install
 build: install
 	SENTRY_RELEASE_NAME=$(SENTRY_RELEASE_NAME) npm run build-prod
 
+build-staging: install
+	SENTRY_RELEASE_NAME=$(SENTRY_RELEASE_NAME) npm run build-staging
+
 deploy: build
+	make sentry-set-commits
+	make sentry-upload-sourcemaps
+
+deploy-staging: build-staging
 	make sentry-set-commits
 	make sentry-upload-sourcemaps

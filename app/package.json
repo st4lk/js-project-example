@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dev": "NODE_ENV=development webpack --config webpack.config.js --progress --colors --bail",
+    "build-staging": "NODE_ENV=staging webpack --config webpack.config.js --colors --bail",
     "build-prod": "NODE_ENV=production webpack --config webpack.config.js --colors --bail",
     "devserver": "node webpack.server.js  --public mobile-app:8080",
     "lint": "node ./node_modules/eslint/bin/eslint.js ."
