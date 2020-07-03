@@ -45,4 +45,3 @@ deploy: build
 
 deploy-staging: build-staging
 	make sentry-set-commits
-	make sentry-upload-sourcemaps
