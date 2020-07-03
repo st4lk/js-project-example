@@ -59,6 +59,10 @@ class Home extends Component {
       });
     }
 
+    /*** uncaught exception ***/
+    const uncaught = undefined;
+    console.log(uncaught.prop);
+
     const config = {1:'AB', 2: 'CD', 3: 'EG'};
 
     if (window.location.href.includes('warn-console')) {
