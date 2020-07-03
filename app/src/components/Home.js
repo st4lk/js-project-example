@@ -60,7 +60,7 @@ class Home extends Component {
     }
 
     /*** unexpected error ***/
-    console.error('Unexepected case happened');
+    // console.error('Unexepected case happened');
 
     const config = {1:'AB', 2: 'CD', 3: 'EG'};
 
