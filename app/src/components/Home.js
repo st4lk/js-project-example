@@ -59,12 +59,15 @@ class Home extends Component {
       });
     }
 
-    /*** unexpected error ***/
-    // console.error('Unexepected case happened');
-
     const config = {1:'AB', 2: 'CD', 3: 'EG'};
 
+    if (window.location.href.includes('error-console')) {
+      /*** console error ***/
+      console.error('Unexepected case happened', config);
+    }
+
     if (window.location.href.includes('warn-console')) {
+      /*** console warning ***/
       console.warn('This is test warning', config);
     }
 
