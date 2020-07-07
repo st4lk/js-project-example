@@ -49,7 +49,7 @@ class Home extends Component {
     if (window.location.href.includes('exception-1')) {
       /*** exception 1 - page crash ***/
       const myObject = undefined;
-      console.log(myObject.bucket);
+      myObject.homeBucket;
     }
 
     if (window.location.href.includes('exception-2')) {

@@ -7,7 +7,7 @@ import {mainRoutes} from "./routes";
 if (window.location.href.includes('exception-3')) {
   /*** exception 3 - app crash ***/
   const myObject = undefined;
-  console.log(myObject.bucket);
+  myObject.appBucket;
 }
 
 ReactDOM.render((
