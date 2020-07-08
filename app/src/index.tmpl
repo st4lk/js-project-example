@@ -13,6 +13,7 @@
       integrity="sha384-lowBFC6YTkvMIWPORr7+TERnCkZdo5ab00oH5NkFLeQUAmBTLGwJpFjF6djuxJ/5"
       crossorigin="anonymous"></script>
     <script src="https://browser.sentry-cdn.com/5.18.0/captureconsole.min.js" crossorigin="anonymous"></script>
+    <script src="https://browser.sentry-cdn.com/5.18.0/extraerrordata.min.js" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
     if (<%= htmlWebpackPlugin.options.environment %> !== "development") {
@@ -22,6 +23,7 @@
         "release": <%= htmlWebpackPlugin.options.sentryRelease %>,
         "integrations": [
           new Sentry.Integrations.CaptureConsole({"levels": ["warn", "error", "assert"]}),
+          new Sentry.Integrations.ExtraErrorData({}),
         ],
       });
     }

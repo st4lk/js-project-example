@@ -52,6 +52,17 @@ class Home extends Component {
       myObject.homeBucket;
     }
 
+    if (window.location.href.includes('exception-6')) {
+      class MyClass {
+        constructor(height, width) {
+          this.prop_1 = [{'a': 1}, {'b': 2}];
+          this.prop_2 = {'c': [{'d': [{'e': 3}]}]};
+        }
+      }
+      const myclass = new MyClass()
+      myclass.doSomething();
+    }
+
     if (window.location.href.includes('exception-2')) {
       /*** exception 2 - unhandled error from promise ***/
       this.callApiWithError().then(() => {
