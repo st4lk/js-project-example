@@ -8,6 +8,10 @@ const MinifyPlugin = require("babel-minify-webpack-plugin");
 
 require('dotenv').config({path: __dirname + '/.env'});
 
+const ENVIRONMENT = JSON.stringify(process.env.NODE_ENV || "development");
+const SENTRY_DSN = JSON.stringify(process.env.SENTRY_DSN);
+const SENTRY_RELEASE_NAME = JSON.stringify(process.env.SENTRY_RELEASE_NAME);
+
 const config = {
   mode: "development",
   output: {
@@ -25,11 +29,14 @@ const config = {
     new HtmlWebpackPlugin({
       title: "Source-maps example",
       template: "src/index.tmpl",
-
-      sentryDSN: JSON.stringify(process.env.SENTRY_DSN),
-      environment: JSON.stringify(process.env.NODE_ENV || "development"),
-      sentryRelease: JSON.stringify(process.env.SENTRY_RELEASE_NAME),
-      isProd: process.env.NODE_ENV === 'production',
+      sentryDSN: SENTRY_DSN,
+      environment: ENVIRONMENT,
+      sentryRelease: SENTRY_RELEASE_NAME,
+    }),
+    new webpack.DefinePlugin({
+      ENVIRONMENT,
+      SENTRY_DSN,
+      SENTRY_RELEASE_NAME,
     }),
   ],
   // devtool: false,
