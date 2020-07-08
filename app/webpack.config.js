@@ -39,11 +39,11 @@ const config = {
       SENTRY_RELEASE_NAME,
     }),
   ],
-  // devtool: false,
-  devtool: "source-map",
+  devtool: false,
+  // devtool: "source-map",
 
   optimization: {
-    minimize: false,
+    // minimize: false,  // uncomment this to see trace of unhandled promise rejection
 
     /* --------------------
     https://webpack.js.org/plugins/terser-webpack-plugin/
