@@ -26,7 +26,7 @@ run: install
 	SENTRY_RELEASE_NAME=$(SENTRY_RELEASE_NAME) npm run devserver
 
 serve: build
-	rm $(DIST_PATH)/assets/*.map
+	rm -f $(DIST_PATH)assets/*.map
 	cd $(DIST_PATH) && python -m SimpleHTTPServer 8080
 
 serve-staging: build-staging
